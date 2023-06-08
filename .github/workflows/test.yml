@@ -28,6 +28,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           level: warning
+          reviewdog_flags: "-filter-mode=nofilter -fail-on-error"
           workdir: ./testdata/
           graphql_schema_linter_flags: "test.graphql"
 
