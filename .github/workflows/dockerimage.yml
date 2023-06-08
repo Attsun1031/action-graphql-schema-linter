@@ -1,13 +1,17 @@
-name: Docker Image CI
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ github.repository }}:$(date +%s)
+#name: Docker Image CI
+#on:
+#  push:
+#    branches:
+#      - master
+#  pull_request:
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v3
+#    - id: string
+#      uses: ASzc/change-string-case-action@v5
+#      with:
+#        string: ${{ github.repository }}
+#    - name: Build the Docker image
+#      run: docker build . --file Dockerfile --tag ${{ steps.string.outputs.lowercase }}:$(date +%s)
