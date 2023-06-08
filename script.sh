@@ -9,7 +9,7 @@ fi
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 echo '::group:: Installing graphql-schema-linter ...  https://github.com/cjoudrey/graphql-schema-linter'
-npm install graphql-schema-linter:"${INPUT_GRAPHQL_SCHEMA_LINTER_VERSION}"
+npm install graphql-schema-linter@"${INPUT_GRAPHQL_SCHEMA_LINTER_VERSION}"
 "$(npm root)"/.bin/graphql-schema-linter --version
 echo '::endgroup::'
 
