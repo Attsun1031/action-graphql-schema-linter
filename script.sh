@@ -11,7 +11,7 @@ graphql-schema-linter --version
 echo '::endgroup::'
 
 # shellcheck disable=SC2086
-graphql-schema-linter ${INPUT_GRAPHQL_SCHEMA_LINTER_FLAGS} --format compact | tee ./result.txt \
+graphql-schema-linter ${INPUT_GRAPHQL_SCHEMA_LINTER_FLAGS} --format compact \
   | reviewdog -efm="%f:%l:%c %m" \
       -name="graphql-schema-linter" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
@@ -19,5 +19,3 @@ graphql-schema-linter ${INPUT_GRAPHQL_SCHEMA_LINTER_FLAGS} --format compact | te
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
       ${INPUT_REVIEWDOG_FLAGS}
-
-cat ./result.txt

@@ -28,11 +28,14 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           level: warning
-          reviewdog_flags: "-filter-mode=nofilter -fail-on-error"
+          reviewdog_flags: -filter-mode=nofilter -fail-on-error
           workdir: ./testdata/
           graphql_schema_linter_flags: "test.graphql"
 
   test-pr-review:
+    permissions:
+      actions: read
+      pull-requests: write
     if: github.event_name == 'pull_request'
     name: runner / graphql-schema-linter (github-pr-review)
     runs-on: ubuntu-latest
