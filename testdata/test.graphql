@@ -4,6 +4,7 @@ type Item {
     options: String
 }
 
+
 type Query {
     item(id: ID!): Item
 }
