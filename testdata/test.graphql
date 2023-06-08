@@ -1,0 +1,12 @@
+type Item {
+    id: ID!
+    name: String!
+    options: String
+    i: Int
+}
+
+
+type Query {
+    item(id: ID!): Item
+}
+
