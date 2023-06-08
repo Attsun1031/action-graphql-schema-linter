@@ -2,6 +2,7 @@
 set -e
 
 cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
+echo "$(pwd)"
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
