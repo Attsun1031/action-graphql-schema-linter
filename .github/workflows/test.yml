@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   test-check:
-    name: runner / <linter-name> (github-check)
+    name: runner / graphql-schema-linter (github-check)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,7 +19,7 @@ jobs:
 
   test-pr-check:
     if: github.event_name == 'pull_request'
-    name: runner / <linter-name> (github-pr-check)
+    name: runner / graphql-schema-linter (github-pr-check)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,11 +29,11 @@ jobs:
           reporter: github-pr-check
           level: warning
           locale: "US"
-          workdir: ./testdata/subdir/
+          workdir: ./testdata/
 
   test-pr-review:
     if: github.event_name == 'pull_request'
-    name: runner / <linter-name> (github-pr-review)
+    name: runner / graphql-schema-linter (github-pr-review)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

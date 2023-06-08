@@ -1,6 +1,6 @@
-name: 'TODO: Run <linter-name> with reviewdog'
-description: 'TODO: 🐶 Run <linter-name> with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+name: 'Run graphql-schema-linter with reviewdog'
+description: '🐶 Run graphql-schema-lisnter with reviewdog on pull requests to improve code review experience.'
+author: 'Attsun1031'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
@@ -29,15 +29,13 @@ inputs:
     description: 'Additional reviewdog flags'
     default: ''
   ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  graphql_schema_linter_flags:
+    description: 'Additional graphql-schema-linter-flags'
     default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
 
-# Ref: https://haya14busa.github.io/github-action-brandings/
-# TODO: update branding if you want.
 branding:
   icon: 'check'
   color: 'blue'
