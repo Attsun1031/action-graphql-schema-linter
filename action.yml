@@ -45,6 +45,7 @@ runs:
       shell: sh
       env:
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        INPUT_WORKDIR: ${{ inputs.workdir }}
         INPUT_LEVEL: ${{ inputs.level }}
         INPUT_REPORTER: ${{ inputs.reporter }}
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}

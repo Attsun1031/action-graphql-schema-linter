@@ -1,10 +1,7 @@
 #!/bin/sh
 set -e
 
-if [ -n "${GITHUB_WORKSPACE}" ] ; then
-  cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
-  git config --global --add safe.directory "${GITHUB_WORKSPACE}" || exit 1
-fi
+cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
