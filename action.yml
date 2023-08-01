@@ -35,12 +35,14 @@ inputs:
   graphql_schema_linter_flags:
     description: 'Additional graphql-schema-linter-flags'
     default: ''
+env:
+  REVIEWDOG_VERSION: v0.14.1
 runs:
   using: 'composite'
   steps:
     - uses: reviewdog/action-setup@v1
       with:
-        reviewdog_version: v0.14.1
+        reviewdog_version: ${{ env.REVIEWDOG_VERSION }}
     - run: ${GITHUB_ACTION_PATH}/script.sh
       shell: sh
       env:
