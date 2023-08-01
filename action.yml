@@ -36,7 +36,7 @@ inputs:
     description: 'Additional graphql-schema-linter-flags'
     default: ''
 env:
-  REVIEWDOG_VERSION: v0.14.1
+  REVIEWDOG_VERSION: v0.14.2
 runs:
   using: 'composite'
   steps:
